@@ -10,12 +10,6 @@ app.use(bodyParser.json({ extended: false }))
 app.use(express.json({ extended: true }))
 const router1 = express.Router();
 
-mongoose.connect(
-    "mongodb+srv://daniyal:246810@cluster0.sy4wa.mongodb.net/todo?retryWrites=true&w=majority",
-    () => {
-        console.log("DB Connected Successfully");
-    }
-)
 // app.use(mongoose())
 let port = process.env.port || 5000;
 router1.get("/todo", (req, res) => {
