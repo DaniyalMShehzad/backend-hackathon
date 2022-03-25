@@ -6,6 +6,12 @@ const Users = require("./models/user")
 // const todoModel = mongoose.model("todos")
 const bodyParser = require('body-parser')
 app.use(cors())
+mongoose.connect(
+
+    () => {
+        console.log("DB Connected Successfully");
+    }
+)
 app.use(bodyParser.json({ extended: false }))
 app.use(express.json({ extended: true }))
 let port = process.env.port || 5000;
