@@ -9,13 +9,6 @@ app.use(cors())
 app.use(bodyParser.json({ extended: false }))
 app.use(express.json({ extended: true }))
 let port = process.env.port || 5000;
-mongoose.connect(
-    "mongodb+srv://daniyal:246810@cluster0.sy4wa.mongodb.net/todo?retryWrites=true&w=majority",
-    () => {
-        console.log("DB Connected Successfully");
-    }
-)
-
 const router1 = express.Router();
 router1.post("/users", (req, res) => {
     console.log(req.body)
